@@ -1,0 +1,63 @@
+\documentclass[a4paper]{report}
+\input{../preamble/colour.tex}
+
+\title{Mathematics Lecture Notes}
+
+\begin{document}
+  
+\maketitle
+\tableofcontents
+
+\chapter{Foundations of Mathematics}
+
+\section{Axiom of Choice and Zorn's Lemma}
+
+\marginpar{
+  Lecture 1\\
+  27 May 2024
+}
+The foundations of modern mathematics are it's axioms. The most widely used system of axioms in modern mathematics is Zermelo-Fraenkel Set Theory (\textit{ZFC}). We dedicate this section to the final axiom, the axiom of choice, which is of great importance in many areas of higher math.
+
+We present the axiom of choice, and Zorn's Lemma without proof. See \cite{munkrestopology} for details.
+
+\begin{definition}
+  Given a collection $\mathcal{A}$ of disjoint nonempty sets, there exists a set $C$ consisting of exactly one element from each element of $\mathcal{A}$; that is, a set $C$ such that $C$ is contained in the union of the elements of $\mathcal{A}$, and for each $A \in \mathcal{A}$, the set $C\cap A$ contains a single element.
+\end{definition}
+
+\begin{lemma} (Zorn's Lemma)
+  Let $A$ be a set that is strictly partially ordered. If every simply ordered subset of $A$ has an upper bound in $A$, then $A$ has a maximal element.
+\end{lemma}
+
+This fairly innocuous axiom, and the succeeding lemma form the base of modern mathematics. We show one such example below.
+
+\begin{theorem}
+  Every vector space has a basis.
+\end{theorem}
+
+\begin{proof}
+  This is a direct consequence of the Axiom of Choice.
+  Consider the vector space $V$ over the field $F$ and the set
+  \[
+    \mathcal{B} = \{B \subset V \mid \text{All elements of } B \text{ are linearly independent in } V \}    
+  \]
+
+  We induce a partial order on this set: if $B_1, B_2 \in \mathcal{B}$ and $B_1 \subseteq B_2$ then $B_1 \leq B_2$.
+
+  We follow the same argument as in U2 to conclude that $\mathcal{B}$ has a maximal element $M$. We now show that $M$ is a basis of $V$.
+
+  Suppose for contradiction that there exists $x \in V$ such that $x \notin \mathrm{span}M$. We now let $x_1, x_2, \cdots, x_n$ be a collection of vectors in $M$ and $a_1, a_2, \cdots, a_n, a_{n + 1} \in F$ such that:
+  \[
+    a_1x_1 + a_2x_2 + \cdots + a_nx_n - a_{n + 1}x = 0
+  \]
+  If $a_{n + 1}=0$ this would mean that $a_i = 0$ for all $1 \leq i \leq n$, contradicting the fact that $M$ is the maximal linearly independent member of $\mathcal{B}$. Thus,  $a_{n + 1}\neq 0$ and
+  \[
+    x = \sum_{i = 1}^n{\frac{a_i}{a_{n + 1}}x_i}    
+  \]
+  Therefore $x \in \mathrm{span}{M}$. This is a contradiction, and therefore $M$ is a basis for $V$.
+
+\end{proof}
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}
