@@ -10,6 +10,10 @@
 %\usepackage{pgfplots}
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed} % Theorem styling
+%\usepackage[explicit]{titlesec}
+%\usepackage{fix-cm}
+%\usepackage{fancyhdr}
+\usepackage[nottoc, numbib]{tocbibind}
 
 %% Math commands %%
 
@@ -39,6 +43,15 @@
 \definecolor{FoamDawn}{HTML}{56949f}
 \definecolor{IrisMain}{HTML}{c4a7e7}
 \definecolor{IrisDawn}{HTML}{907aa9}
+
+%% Hyperref %%
+\usepackage[linkbordercolor=GoldDawn, citebordercolor=GoldDawn]{hyperref}
+
+%% Fancy Header %%
+
+%\renewcommand{\headrulewidth}{0.5}
+%\renewcommand{\headrule}{\hbox to\headwidth{%
+%\color{GoldDawn!60}\leaders\hrule height \headrulewidth\hfill}}
 
 %% Theorem style %%
 
@@ -114,6 +127,35 @@
 ]{thmlovedawn}
 
 \declaretheoremstyle[
+    headfont=\bfseries\color{IrisDawn!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=IrisDawn, 
+        backgroundcolor=IrisDawn!5,
+    }
+]{thmirisdawn}
+
+\declaretheoremstyle[
+    headfont=\bfseries\color{IrisDawn!70!black}, 
+    bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=IrisDawn, 
+        backgroundcolor=IrisDawn!1,
+    },
+    qed=\qedsymbol
+]{thmcproofbox}
+
+
+\declaretheoremstyle[
   headfont=\bfseries,
   bodyfont=\normalfont,
   mdframed={
@@ -129,13 +171,19 @@
 
 %% Theorems, Lemmas, etc %%
 \declaretheorem[style=thmfoamdawn, name=Definition, numberwithin=section]{definition}
-\declaretheorem[style=light, name=Example, numberwithin=definition]{example}
+\declaretheorem[style=nostyle, name=Example, numberwithin=definition]{example}
 \declaretheorem[style=thmgolddawn, name=Theorem, sibling=definition]{theorem}
 \declaretheorem[style=thmrosedawn, name=Lemma, sibling=definition]{lemma}
-\declaretheorem[style=light, name=Corollary, numberwithin=theorem]{corollary}
+\declaretheorem[style=thmirisdawn, name=Corollary, numberwithin=theorem]{corollary}
 \declaretheorem[style=thmlovedawn, name=Proposition, sibling=definition]{proposition}
 
 \declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
 \renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+
+\declaretheorem[style=thmcproofbox, name=Proof]{cproof}
+\renewenvironment{cproof}[1][\proofname]{\vspace{-10pt}\begin{cproof}}{\end{cproof}}
+
+
 
 \author{Akira Tanase}
