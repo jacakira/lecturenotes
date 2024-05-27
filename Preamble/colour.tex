@@ -1,0 +1,141 @@
+%% Packages %%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%\usepackage{pgfplots}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed} % Theorem styling
+
+%% Math commands %%
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+%\DeclareMathOperator{\ker}{ker}
+%\DeclareMathOperator{\im}{im}
+%\DeclareMathOperator{\sgn}{sgn}
+
+%% Colours %%
+
+% Rosepine (https://rosepinetheme.com/palette/)
+\definecolor{LoveMain}{HTML}{eb6f92}
+\definecolor{LoveDawn}{HTML}{b4637a}
+\definecolor{TextMain}{HTML}{e0def4}
+\definecolor{TextDawn}{HTML}{575279}
+\definecolor{GoldMain}{HTML}{f6c177}
+\definecolor{GoldDawn}{HTML}{ea9d34}
+\definecolor{RoseMain}{HTML}{ebbcba}
+\definecolor{RoseDawn}{HTML}{d7827e}
+\definecolor{PineMain}{HTML}{31748f}
+\definecolor{PineDawn}{HTML}{286983}
+\definecolor{FoamMain}{HTML}{9ccfd8}
+\definecolor{FoamDawn}{HTML}{56949f}
+\definecolor{IrisMain}{HTML}{c4a7e7}
+\definecolor{IrisDawn}{HTML}{907aa9}
+
+%% Theorem style %%
+
+\mdfsetup{skipabove=1em, skipbelow=0em}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+    headfont=\bfseries\color{GoldDawn!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=GoldDawn, 
+        backgroundcolor=GoldDawn!5,
+    }
+]{thmgolddawn}
+
+\declaretheoremstyle[
+    headfont=\bfseries\color{GoldDawn!70!black}, 
+    bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=GoldDawn, 
+        backgroundcolor=GoldDawn!1,
+    },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\color{FoamDawn!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=FoamDawn, 
+        backgroundcolor=FoamDawn!5,
+    }
+]{thmfoamdawn}
+
+\declaretheoremstyle[
+    headfont=\bfseries\color{RoseDawn!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=RoseDawn, 
+        backgroundcolor=RoseDawn!5,
+    }
+]{thmrosedawn}
+
+\declaretheoremstyle[
+    headfont=\bfseries\color{LoveDawn!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, 
+        topline=false, 
+        bottomline=false,
+        linecolor=LoveDawn, 
+        backgroundcolor=LoveDawn!5,
+    }
+]{thmlovedawn}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+  mdframed={
+    linewidth=2pt,
+    rightline=false,
+    topline=false,
+    bottomline=false,
+    linecolor=TextDawn!40,
+  }
+]{light}
+
+\declaretheoremstyle[]{nostyle}
+
+%% Theorems, Lemmas, etc %%
+\declaretheorem[style=thmfoamdawn, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=light, name=Example, numberwithin=definition]{example}
+\declaretheorem[style=thmgolddawn, name=Theorem, sibling=definition]{theorem}
+\declaretheorem[style=thmrosedawn, name=Lemma, sibling=definition]{lemma}
+\declaretheorem[style=light, name=Corollary, numberwithin=theorem]{corollary}
+\declaretheorem[style=thmlovedawn, name=Proposition, sibling=definition]{proposition}
+
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+\author{Akira Tanase}

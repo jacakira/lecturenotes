@@ -1,0 +1,49 @@
+%% Packages %%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%\usepackage{pgfplots}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed} % Theorem styling
+
+%% Math commands %%
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+%\DeclareMathOperator{\ker}{ker}
+%\DeclareMathOperator{\im}{im}
+%\DeclareMathOperator{\sgn}{sgn}
+
+%% Theorem style %%
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+]{thmdef}
+
+\declaretheoremstyle[
+headfont=\bfseries,
+bodyfont=\normalfont,
+numbered=no,
+]{proofdef}
+
+%% Theorems, Lemmas, etc %%
+\declaretheorem[name=Definition, numberwithin=section]{definition}
+\declaretheorem[name=Example, numberwithin=definition]{example}
+\declaretheorem[name=Theorem, sibling=definition]{theorem}
+\declaretheorem[name=Lemma, sibling=definition]{lemma}
+\declaretheorem[name=Corollary, numberwithin=theorem]{corollary}
+\declaretheorem[name=Proposition, sibling=definition]{proposition}
+
+
+\author{Akira Tanase}

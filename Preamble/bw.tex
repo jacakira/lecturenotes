@@ -1,0 +1,66 @@
+%% Packages %%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%\usepackage{pgfplots}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed} % Theorem styling
+
+%% Math commands %%
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+%\DeclareMathOperator{\ker}{ker}
+%\DeclareMathOperator{\im}{im}
+%\DeclareMathOperator{\sgn}{sgn}
+
+%% Theorem style %%
+
+\mdfsetup{skipabove=1em,skipbelow=0em, innertopmargin=5pt, innerbottommargin=6pt}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+  mdframed={ nobreak}
+]{thmbw}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+]{thmsub}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily,
+bodyfont=\normalfont,
+numbered=no,
+mdframed={
+rightline=false,
+topline=false,
+bottomline=false,
+},
+qed=\qedsymbol
+]{proofbw}
+
+
+%% Theorems, Lemmas, etc %%
+\declaretheorem[style=thmbw, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmsub, name=Example, numberwithin=definition]{example}
+\declaretheorem[style=thmbw, name=Theorem, sibling=definition]{theorem}
+\declaretheorem[style=thmbw, name=Lemma, sibling=definition]{lemma}
+\declaretheorem[style=thmsub, name=Corollary, numberwithin=theorem]{corollary}
+\declaretheorem[style=thmbw, name=Proposition, sibling=definition]{proposition}
+
+\declaretheorem[name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\begin{replacementproof}}{\end{replacementproof}}
+
+\author{Akira Tanase}
