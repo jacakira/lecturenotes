@@ -1,0 +1,53 @@
+\chapter[Group Theory]{An Introduction to Group Theory}
+\section{Normal Subgroups and Quotient Groups}
+
+\marginpar{
+  Lecture 2\\
+  28 May 2024
+}
+In this section we define a normal subgroup, which allows us to define quotient groups which are of great importance in further study of Groups.
+
+\begin{definition}
+  Let $G$ be a group and $H \leq G$. If $ghg^{-1} \in H$ for all $g \in G$, $h \in H$, then $H$ is a normal subgroup of $G$. We write this as $H \lhd G$.
+\end{definition}
+
+\begin{example}
+  Let $G$ be an abelian group and $H \leq G$. Then as $ghg^{-1}=gg^{-1}h=1_Gh=h \in H$, we can conclude that $H \lhd G$.  
+\end{example}
+
+\begin{theorem}
+  Let $G_1, G_2$ be groups and $\phi : G_1 \rightarrow G_2$ be a homomorphism. Then, $\text{Ker}(\phi)$ is a normal subgroup.
+\end{theorem}
+\begin{proof}
+  Let \( g \in G \) and \( h \in \ker(\phi) \). Then,
+  \[
+    \phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g)^{-1} = \phi(g)1_G\phi(g)^{-1} = \phi(g)\phi(g)^{-1} = 1_G.
+  \]
+  Therefore, \( ghg^{-1} \in \ker(\phi) \).
+\end{proof}
+
+We note that with this definition of a normal subgroup, it is natural to define the following equality between cosets:
+\[
+  (gN)(hN)\overset{\text{def}}{=}ghN
+\]
+With this definition, the quotient $G/N$ forms a group.
+
+\section{The First Isomorphism Theorem}
+
+In this section we introduce the first isomorphism theorem and its corollaries.
+
+\begin{theorem}[First Isomorphism Theorem]
+  Let $\phi: G \rightarrow H$ be a homomorphism of groups. If we let $\pi : G \rightarrow G/\text{Ker}(\phi)$ be the canonical projection map, there exists a unique isomorphism $\psi: G/\text{Ker}(\phi) \rightarrow H$.
+  \begin{tikzcd}
+    G \arrow[r, "\phi"] \arrow[d, "\pi"'] & H \\
+    G/\text{Ker}(\phi) \arrow[ur, dashed, "\psi"'] &
+  \end{tikzcd}
+\end{theorem}
+
+\begin{corollary}[Rank-Nullity Theorem]
+  Let $V$ and $W$ be vector spaces and $T:V\rightarrow W$ be a linear map. Then,
+  \begin{equation*}
+    \text{dim}V = \text{dim}\text{Im} T + \text{dim}\text{Ker}T
+  \end{equation*}
+\end{corollary}
+
