@@ -59,113 +59,106 @@
 
 \theoremstyle{definition}
 
+\colorlet{thmproofboxcolour}{gray}
+
 \declaretheoremstyle[
-    headfont=\bfseries\color{GoldDawn!70!black}, 
-    bodyfont=\normalfont,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=GoldDawn, 
-        backgroundcolor=GoldDawn!5,
-    }
+headfont=\bfseries\color{GoldDawn!70!black}, 
+bodyfont=\normalfont,
+mdframed={
+  linewidth=2pt,
+  rightline=false, 
+  topline=false, 
+  bottomline=false,
+  linecolor=GoldDawn, 
+  backgroundcolor=GoldDawn!5,
+},
+postfoothook={\xglobal\colorlet{thmproofboxcolour}{GoldDawn}},
 ]{thmgolddawn}
 
 \declaretheoremstyle[
-    headfont=\bfseries\color{GoldDawn!70!black}, 
-    bodyfont=\normalfont,
-    numbered=no,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=GoldDawn, 
-        backgroundcolor=GoldDawn!1,
-    },
-    qed=\qedsymbol
-]{thmproofbox}
+headfont=\bfseries\color{RoseDawn!70!black}, 
+bodyfont=\normalfont,
+mdframed={
+  linewidth=2pt,
+  rightline=false, 
+  topline=false, 
+  bottomline=false,
+  linecolor=RoseDawn, 
+  backgroundcolor=RoseDawn!5,
+},
+postfoothook={\xglobal\colorlet{thmproofboxcolour}{RoseDawn}},
+]{thmrosedawn}
+
 
 \declaretheoremstyle[
-    headfont=\bfseries\color{FoamDawn!70!black}, 
-    bodyfont=\normalfont,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=FoamDawn, 
-        backgroundcolor=FoamDawn!5,
-    }
+headfont=\bfseries\color{FoamDawn!70!black}, 
+bodyfont=\normalfont,
+mdframed={
+  linewidth=2pt,
+  rightline=false, 
+  topline=false, 
+  bottomline=false,
+  linecolor=FoamDawn, 
+  backgroundcolor=FoamDawn!5,
+},
+postfoothook={\xglobal\colorlet{thmproofboxcolour}{FoamDawn}},
 ]{thmfoamdawn}
 
 \declaretheoremstyle[
-    headfont=\bfseries\color{RoseDawn!70!black}, 
-    bodyfont=\normalfont,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=RoseDawn, 
-        backgroundcolor=RoseDawn!5,
-    }
-]{thmrosedawn}
-
-\declaretheoremstyle[
-    headfont=\bfseries\color{LoveDawn!70!black}, 
-    bodyfont=\normalfont,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=LoveDawn, 
-        backgroundcolor=LoveDawn!5,
-    }
+headfont=\bfseries\color{LoveDawn!70!black}, 
+bodyfont=\normalfont,
+mdframed={
+  linewidth=2pt,
+  rightline=false, 
+  topline=false, 
+  bottomline=false,
+  linecolor=LoveDawn, 
+  backgroundcolor=LoveDawn!5,
+},
+postfoothook={\xglobal\colorlet{thmproofboxcolour}{LoveDawn}},
 ]{thmlovedawn}
 
 \declaretheoremstyle[
-    headfont=\bfseries\color{IrisDawn!70!black}, 
-    bodyfont=\normalfont,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=IrisDawn, 
-        backgroundcolor=IrisDawn!5,
-    }
+headfont=\bfseries\color{IrisDawn!70!black}, 
+bodyfont=\normalfont,
+mdframed={
+  linewidth=2pt,
+  rightline=false, 
+  topline=false, 
+  bottomline=false,
+  linecolor=IrisDawn, 
+  backgroundcolor=IrisDawn!5,
+},
+postfoothook={\xglobal\colorlet{thmproofboxcolour}{IrisDawn}},
 ]{thmirisdawn}
 
 \declaretheoremstyle[
-    headfont=\bfseries\color{IrisDawn!70!black}, 
-    bodyfont=\normalfont,
-    numbered=no,
-    mdframed={
-        linewidth=2pt,
-        rightline=false, 
-        topline=false, 
-        bottomline=false,
-        linecolor=IrisDawn, 
-        backgroundcolor=IrisDawn!1,
-    },
-    qed=\qedsymbol
-]{thmcproofbox}
-
+headfont=\bfseries,
+bodyfont=\normalfont,
+mdframed={
+  linewidth=2pt,
+  rightline=false,
+  topline=false,
+  bottomline=false,
+  linecolor=TextDawn!40,
+},
+]{light}
 
 \declaretheoremstyle[
-  headfont=\bfseries,
-  bodyfont=\normalfont,
-  mdframed={
-    linewidth=2pt,
-    rightline=false,
-    topline=false,
-    bottomline=false,
-    linecolor=TextDawn!40,
-  }
-]{light}
+headfont=\bfseries\color{thmproofboxcolour!70!black}, 
+bodyfont=\normalfont,
+numbered=no,
+mdframed={
+  linewidth=2pt,
+  rightline=false, 
+  topline=false, 
+  bottomline=false,
+  linecolor=thmproofboxcolour, 
+  backgroundcolor=thmproofboxcolour!1,
+},
+qed=\qedsymbol
+]{thmproofbox}
+
 
 \declaretheoremstyle[]{nostyle}
 
@@ -179,11 +172,5 @@
 
 \declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
 \renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
-
-
-\declaretheorem[style=thmcproofbox, name=Proof]{cproof}
-\renewenvironment{cproof}[1][\proofname]{\vspace{-10pt}\begin{cproof}}{\end{cproof}}
-
-
 
 \author{Akira Tanase}
