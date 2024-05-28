@@ -37,11 +37,19 @@ With this definition, the quotient $G/N$ forms a group.
 In this section we introduce the first isomorphism theorem and its corollaries.
 
 \begin{theorem}[First Isomorphism Theorem]
-  Let $\phi: G \rightarrow H$ be a homomorphism of groups. If we let $\pi : G \rightarrow G/\text{Ker}(\phi)$ be the canonical projection map, there exists a unique isomorphism $\psi: G/\text{Ker}(\phi) \rightarrow H$.
-  \begin{tikzcd}
-    G \arrow[r, "\phi"] \arrow[d, "\pi"'] & H \\
-    G/\text{Ker}(\phi) \arrow[ur, dashed, "\psi"'] &
-  \end{tikzcd}
+  \begin{flushleft}
+    \begin{minipage}{0.6\textwidth}
+      \label{firstiso}
+      Let $\phi: G \rightarrow H$ be a homomorphism of groups. If we let $\pi : G \rightarrow G/\text{Ker}(\phi)$ be the canonical projection map, there exists a unique isomorphism $\psi: G/\text{Ker}(\phi) \rightarrow H$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+      \begin{tikzcd}
+        G \arrow[r, "\phi"] \arrow[d, "\pi"'] & H \\
+        G/\text{Ker}(\phi) \arrow[ur, dashed, "\psi"'] &
+      \end{tikzcd}
+    \end{minipage}
+  \end{flushleft}
 \end{theorem}
 
 \begin{corollary}[Rank-Nullity Theorem]
@@ -50,4 +58,14 @@ In this section we introduce the first isomorphism theorem and its corollaries.
     \text{dim}V = \text{dim}\text{Im} T + \text{dim}\text{Ker}T
   \end{equation*}
 \end{corollary}
+
+\begin{proof}
+  We note that $(V, \oplus)$ forms an abelian group. Furthermore, we note that the linear map $T$ is a homomorphism. Therefore, by Theorem \ref{firstiso}, we have 
+  \begin{align*}
+    V/\text{Ker}T &\cong \text{Im} \\
+    \text{dim}(V/\text{Ker}T) &= \text{dim}\text{Im}T\\
+    \text{dim}V-\text{dim}\text{Ker}T&=\text{dim}\text{Im}T
+  \end{align*}
+  The result follows immediately.
+\end{proof}
 
