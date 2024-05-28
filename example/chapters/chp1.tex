@@ -1,0 +1,58 @@
+\chapter[Foundations]{Foundations of Mathematics}
+
+\section[Axiom of Choice]{The Axiom of Choice and Zorn's Lemma}
+
+\marginpar{
+  Lecture 1\\
+  27 May 2024
+}
+The foundations of modern mathematics are it's axioms. The most widely used system of axioms in modern mathematics is Zermelo-Fraenkel Set Theory (\textit{ZFC}). We dedicate this section to the final axiom, the axiom of choice, which is of great importance in many areas of higher math.
+
+We present the axiom of choice, and Zorn's Lemma without proof. See \cite{munkrestopology} for further details.
+
+\begin{definition}
+  Given a collection $\mathcal{A}$ of disjoint nonempty sets, there exists a set $C$ consisting of exactly one element from each element of $\mathcal{A}$; that is, a set $C$ such that $C$ is contained in the union of the elements of $\mathcal{A}$, and for each $A \in \mathcal{A}$, the set $C\cap A$ contains a single element.
+\end{definition}
+
+\begin{lemma}[Zorn's Lemma]
+  Let $A$ be a set that is strictly partially ordered. If every simply ordered subset of $A$ has an upper bound in $A$, then $A$ has a maximal element.
+\end{lemma}
+
+This fairly innocuous axiom, and the succeeding lemma form the base of modern mathematics. We show one such example below.
+
+\begin{theorem}
+  Every vector space has a basis.
+\end{theorem}
+
+\begin{proof}
+  This is a direct consequence of the Axiom of Choice.
+  Consider the vector space $V$ over the field $F$ and the set
+  \[
+    \mathcal{A} = \{A \subset V \mid \text{All elements of } A \text{ are linearly independent in } V \}    
+  \]
+
+  We induce a partial order on this set: if $A_1, A_2 \in \mathcal{A}$ and $A_1 \subseteq A_2$ then $A_1 \leq A_2$.
+
+  We now show that every subset of $\mathcal{A}$ has a maximal element. Suppose $\mathcal{A}_1$ is a partially ordered subset of $\mathcal{A}$. We show that
+\begin{equation*}
+  A_{\mathcal{A}_1} = \bigcup_{\mathcal{A}_1}A
+\end{equation*}
+is a maximal element. Clearly, $A_{\mathcal{A}_1}$ contains all elements of $\mathcal{A}_1$ and is thus larger than all elements of $\mathcal{A}$. We show now that $A_{\mathcal{A}_1}$ is linearly independent.
+
+Suppose that $a_1, a_2, \cdots, a_n$ are an arbritrary set of elements of $A_{\mathcal{A}_1}$. As $\mathcal{A}$ is simply ordered, there must exist a set $A_{k} \in A_{\mathcal{A}_1}$ such that $a_1, a_2, \cdots, a_n \in A_{k}$. As $A_k \in \mathcal{A}$, $a_1, a_2, \cdots, a_n$ are linearly independent and thus $A_{\mathcal{A}_1}$ is linearly independent.
+        
+        We have shown that every simply ordered subset of $\mathcal{A}$ has an upper bound in $\mathcal{A}$. Thus, by Zorn's Lemma, $\mathcal{A}$ has a maximal element $M$. We now show that $M$ is a basis of $V$.
+
+  Suppose for contradiction that there exists $x \in V$ such that $x \notin \langle M \rangle$. We now let $x_1, x_2, \cdots, x_n$ be a collection of vectors in $M$ and $a_1, \cdots,a_{n + 1} \in F$ such that:
+  \[
+    a_1x_1 + a_2x_2 + \cdots + a_nx_n - a_{n + 1}x = 0
+  \]
+  If $a_{n + 1}=0$ this would mean that $a_i = 0$ for all $1 \leq i \leq n$, contradicting the fact that $M$ is the maximal linearly independent member of $\mathcal{A}$. Thus,  $a_{n + 1}\neq 0$ and
+  \[
+    x = \sum_{i = 1}^n{\frac{a_i}{a_{n + 1}}x_i}    
+  \]
+  Therefore $x \in \mathrm{span}{M}$. This is a contradiction, and therefore $M$ is a basis for $V$.
+
+\end{proof}
+
+
